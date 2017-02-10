@@ -51,11 +51,11 @@ This app uses JSON Web Tokens to authenticate user and keep them logged in. All 
   2. Once you've done this you'll need to run the following command:
      'npm install -g bower # this may require sudo on Mac/Linux'
 3. Once **npm** and **bower** are installed, you'll need to install all of the dependencies in *package.json* and *bower.json*
-  '''
+  ```
   npm install
 
   bower install
-  '''
+  ```
 4. After those dependencies have been installed you'll need to make sure that you have **http-server** installed. You can install this by running the following: ```npm install -g http-server # this also may require sudo on Mac/Linux```
 5. Once **http-server** is installed run ```http-server```
 6. The project will now run on [localhost](http://127.0.0.1:8080)
