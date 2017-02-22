@@ -2,7 +2,7 @@ angular.module('RouteControllers', [])
     .controller('HomeController', function($scope) {
         $scope.title = "Welcome To Angular Todo!"
     })
-    .controller('RegisterController', function($scope, UserAPIService, store) {
+    .controller('RegisterController', function($location, $scope, UserAPIService, store) {
         $scope.registrationUser = {};
         var URL = "https://morning-castle-91468.herokuapp.com/";
 
@@ -34,7 +34,7 @@ angular.module('RouteControllers', [])
 
     })
 
-    .controller('LoginController', function($scope, UserAPIService, store) {
+    .controller('LoginController', function($location, $scope, UserAPIService, store) {
         $scope.loginUser = {};
         var URL = "https://morning-castle-91468.herokuapp.com/";
 
@@ -68,6 +68,7 @@ angular.module('RouteControllers', [])
     .controller('TodoController', function($scope, $location, TodoAPIService, store) {
         if (!store.get('authToken')) {
            $location.path("/accounts/register");
+           alert("You must create an account, or login, before accessing your todo list!");
         }
 
         var URL = "https://morning-castle-91468.herokuapp.com/";
@@ -102,7 +103,7 @@ angular.module('RouteControllers', [])
         };
      
         $scope.deleteTodo = function(id) {
-            TodoAPIService.deleteTodo(url + "todo/" + id, $scope.username, $scope.authToken).then(function(results) {
+            TodoAPIService.deleteTodo(URL + "todo/" + id, $scope.username, $scope.authToken).then(function(results) {
                 console.log(results);
             }).catch(function(err) {
                 console.log(err);
