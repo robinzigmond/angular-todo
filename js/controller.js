@@ -1,6 +1,8 @@
 angular.module('RouteControllers', [])
-    .controller('HomeController', function($scope) {
-        $scope.title = "Welcome To Angular Todo!"
+    .controller('HomeController', function($scope, store) {
+        $scope.title = "Welcome To Angular Todo!";
+        $scope.username = store.get('username');
+        console.log($scope.username);
     })
     .controller('RegisterController', function($location, $scope, UserAPIService, store) {
         $scope.registrationUser = {};
@@ -15,7 +17,7 @@ angular.module('RouteControllers', [])
             }).catch(function(err) {
                 console.log(err.data);
             });
-        }
+        };
 
         $scope.submitForm = function() {
             if ($scope.registrationForm.$valid) {
@@ -96,7 +98,7 @@ angular.module('RouteControllers', [])
                     console.log(err)
                 });
             }
-        }
+        };
 
         $scope.editTodo = function(id) {
             $location.path("/todo/edit/" + id);
@@ -130,4 +132,4 @@ angular.module('RouteControllers', [])
                 })
             }
         }
-});
+    });
