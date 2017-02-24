@@ -133,4 +133,8 @@ angular.module('RouteControllers', [])
                 })
             }
         }
+<<<<<<< HEAD
 });
+=======
+    });
+>>>>>>> 62a319a8b365a2288418017d6a5eb1dde369ca24
