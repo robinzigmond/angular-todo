@@ -2,26 +2,26 @@ angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angula
 
 angular.module('TodoApp').config(function($locationProvider, $routeProvider) {
 	$locationProvider.html5Mode(true);
-	$routeProvider.when('/', {
+	$routeProvider.when('/angular-todo/', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeController'
 	})
-	.when('/accounts/register', {
+	.when('/angular-todo/accounts/register', {
 		templateUrl: 'templates/register.html',
 		controller: 'RegisterController'
 	})
-	.when('/accounts/login', {
+	.when('/angular-todo/accounts/login', {
 		templateUrl: 'templates/login.html',
 		controller: 'LoginController'
 	})
-	.when('/accounts/logout', {
+	.when('/angular-todo/accounts/logout', {
 		templateUrl: 'templates/logout.html',
 		controller: 'LogoutController'
 	})
-	.when('/todo', {
+	.when('/angular-todo/todo', {
 		templateUrl: 'templates/todo.html',
 		controller: 'TodoController'
-	}).when('/todo/edit/:id', {
+	}).when('/angular-todo/todo/edit/:id', {
 	    templateUrl:'templates/edit-todo.html',
 	    controller: 'EditTodoController'
 	});
