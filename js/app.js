@@ -2,7 +2,7 @@ angular.module('TodoApp', ['ngRoute', 'RouteControllers', 'UserService', 'angula
 
 angular.module('TodoApp').config(function($locationProvider, $routeProvider) {
 	$locationProvider.html5Mode(true);
-	$routeProvider.when('/angular-todo/', {
+	$routeProvider.when('/', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeController'
 	})
